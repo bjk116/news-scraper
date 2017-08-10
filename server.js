@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var request = require('request');
 //Set mongoose to use Promises
 mongoose.Promise = Promise;
 
@@ -44,8 +45,8 @@ db.once('open', function() {
 });
 
 //Routes
-require('./routes/html-routes.js')(app);
-//require('./routes/api-routes.js')(app);
+require('./routes/html-routes.js')(app, request);
+require('./routes/api-routes.js')(app);
 
 app.listen(3000, function() {
 	console.log('App running on port 3000');

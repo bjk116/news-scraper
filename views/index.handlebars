@@ -10,16 +10,32 @@
             		<p>This site scrapes articles from a new source of your choice.  You can then comment on them if you choose to sign in!</p>
             	</div>
             	<div class="card-action">
-              		<a href="/NYT">New York Times</a>
+              		<a href="/scrape">Scrape</a>
             	</div>
           	</div>
 		</div>
 		<div class = "col m6">
+			{{#if scrape}}
 			<div class = "card">
 				<div class = "card-content">
-					
+					<span class = "card-title"><b><u>News Sources Available</u></b></span>
 				</div>
+				<ul class = "collection">
+					<li class = "collection-item"><a href="/NYT">New York Times</a></li>
+				</ul>
 			</div>
+			{{/if}}
+		</div>
+	</div>
+	<div class = "row">
+		<div class = "col m6 offset-m3">
+			{{#if scrape}}
+				<div class = "card">
+					<div class = "card-content">
+						<span class = "card-title">Scrape Complete!</span>
+					</div>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 </div>
